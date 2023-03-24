@@ -9,14 +9,12 @@ import time
 import seaborn as sns
 sns.set()
 
-
-cols = ["label","alcol","acido malico","cenere","alcalinità della cenere","magnesio",
-        "fenoli totali","flavonoidi","fenoli non-flavonoidi","proantocianidine",
-        "intensità del colore","tonalità", "OD280/OD315 dei vini diluiti","prolina"]
-
+cols = ["label", "alcol", "acido malico", "cenere", "alcalinità della cenere", "magnesio",
+        "fenoli totali", "flavonoidi", "fenoli non-flavonoidi", "proantocianidine",
+        "intensità del colore", "tonalità", "OD280/OD315 dei vini diluiti", "prolina"]
 
 wines = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data",
-                 names=cols)
+                    names=cols)
 print(wines.info())
 print(wines.head())
 
@@ -34,7 +32,7 @@ print(x_pc)
 
 plt.xlabel("PCA 1")
 plt.ylabel("PCA 2")
-plt.scatter(x_pc[:,0], x_pc[:,1], c=y, cmap='viridis', edgecolors='black')
+plt.scatter(x_pc[:, 0], x_pc[:, 1], c=y, cmap='viridis', edgecolors='black')
 plt.show()
 
 ''' SELEZIONE NUMERO COMPONENTI CON VARIANZA '''
@@ -43,13 +41,13 @@ pca = PCA(n_components=None)
 pca.fit(x)
 
 vr = pca.explained_variance_ratio_  # varianza di ogni pca
-vr_cum = np.cumsum(vr)              #varianza cumulativa
+vr_cum = np.cumsum(vr)  # varianza cumulativa
 print(vr)
 
 soglia = 0.85
 plt.plot(range(1, 14), vr, label="Var")
-plt.plot(range(1,14), vr_cum, label="VarCum")
-plt.plot(range(1,14), soglia*np.ones(13), linestyle='--', color='black')
+plt.plot(range(1, 14), vr_cum, label="VarCum")
+plt.plot(range(1, 14), soglia * np.ones(13), linestyle='--', color='black')
 plt.xlabel("# label")
 plt.ylabel("Var, VarCum")
 plt.legend()
