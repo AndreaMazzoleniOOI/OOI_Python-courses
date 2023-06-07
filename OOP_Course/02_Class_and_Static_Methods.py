@@ -1,5 +1,6 @@
 import csv
 
+
 class Item:
     pay_rate = 0.8 # The pay rate after 20% discount
     all = []
@@ -63,6 +64,7 @@ item3 = Item("Cable", 10, 5)
 item4 = Item("Mouse", 50, 5)
 item5 = Item("Keyboard", 75, 5)
 
+print(item1.calculate_total_price())
 Item.instantiate_from_csv()
 print(Item.all)
 print(Item.is_integer(5))   # Does not apply to the specific object but to the input we send
