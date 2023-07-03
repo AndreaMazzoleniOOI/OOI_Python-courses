@@ -34,6 +34,7 @@ def sync_main():
         time.sleep(0.25)
     print(f'Sum is {value["data"]}+{i} = {value["data"]+i}')
 
+
 start = time.time()
 asyncio.run(main())
 print(f'Async took {time.time()-start}')
@@ -42,4 +43,6 @@ print('\n\n\n')
 start = time.time()
 sync_main()
 print(f'Sync took {time.time()-start}')
+
+
 

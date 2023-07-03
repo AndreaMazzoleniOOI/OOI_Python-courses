@@ -1,0 +1,9 @@
+{
+    "Batch Size": 20,
+    "Class Number": 2,
+    "Epochs": 20,
+    "Filters": 2,
+    "Max Pooling": 2,
+    "Convolutional Layers": 3,
+    "Dense Layers": 128
+}
