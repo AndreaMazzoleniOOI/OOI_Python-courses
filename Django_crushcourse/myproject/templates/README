@@ -1,0 +1,2 @@
+This is a custom dir to put the HTML TEMPLATES
+This folder must be addes to the field TEMPLATES.DIRS in setting.py of myproject
