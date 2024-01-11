@@ -23,12 +23,9 @@ def counter(request):
 def register(request):
     if request.method != 'POST':
         return render(request, 'register.html')
-    print(request.POST)
 
     for field in request.POST:
-        print(field)
         if not request.POST[field]:
-            print(field)
             messages.info(request, 'Please fill up all the fields!')
             return redirect('register')
 
@@ -51,3 +48,32 @@ def register(request):
     user = User.objects.create_user(username=user, email=email, password=psw)
     user.save()
     return redirect('login')
+
+
+def login(request):
+    if request.method != 'POST':
+        return render(request, 'login.html')
+
+    for field in request.POST:
+        if not request.POST[field]:
+            messages.info(request, 'Please fill up all the fields!')
+            return redirect('login')
+
+    username = request.POST['username']
+    password = request.POST['password']
+
+    # Check authentication
+    user = auth.authenticate(username=username, password=password)
+    if not user:
+        messages.info(request, 'Invalid user or password')
+        return redirect('login')
+
+    # Authorize login to homepage
+    auth.login(request, user)
+    return redirect('/', user)    # home page
+
+
+def logout(request):
+    auth.logout(request)
+    print(auth.logout(request))
+    return redirect('/')
