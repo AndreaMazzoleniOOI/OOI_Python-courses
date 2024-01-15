@@ -1,0 +1,17 @@
+.title{
+    font: optional;
+}
+
+.post_title{
+    font-weight: bold;
+    font-size: 20
+}
+
+.post_date{
+    font-weight: bold;
+    font-size: 16
+}
+
+.post_content{
+    font-size: 14;
+}
