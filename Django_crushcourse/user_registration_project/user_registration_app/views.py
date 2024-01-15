@@ -11,15 +11,6 @@ def index(request):
                   {'features': features})
 
 
-def counter(request):
-    words = request.POST['text']    # get form "words" content (GET --> show in link, POST --> hide (CSRF token needed)
-    context = {
-        'text': words,
-        'length': len(words.split())
-    }
-    return render(request, 'counter.html', context)
-
-
 def register(request):
     if request.method != 'POST':
         return render(request, 'register.html')
@@ -73,7 +64,16 @@ def login(request):
     return redirect('/', user)    # home page
 
 
+def counter(request):
+    post = [1, 2, 'tim', 'john']
+    return render(request, 'counter.html', {'posts': post})     # turn list into urls
+
+
 def logout(request):
     auth.logout(request)
     print(auth.logout(request))
     return redirect('/')
+
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
