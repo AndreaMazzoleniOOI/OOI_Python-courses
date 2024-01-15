@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<div class="main">
+    <div class="title_div">
+        <h1 class="title">My blog</h1>
+    </div>
+    <div class="card">
+        <p class="post_title">{{post.title}}</p>
+        <p class="post_date">{{post.date}}</p>
+        <p class="post_content">{{post.content}}</p><br>
+        <a class="back_link" href="/">Torna alla pagina principale</a>
+    </div>
+</div>
