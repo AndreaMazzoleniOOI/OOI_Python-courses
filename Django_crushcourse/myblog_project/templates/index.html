@@ -1,9 +1,18 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
+<div class="main">
+    <div class="title_div">
+        <h1 class="title">My blog</h1>
+    </div>
+    <hr>
 
-<h1 class="title">My blog</h1>
-<hr>
-    <p class="post_title">TITLE</p>
-    <p class="post_date">Date</p>
-    <p class="post_content">Content</p>
-<hr>
+    <div class="row">
+    {% for post in posts reversed %}
+        <div class="card">
+            <p class="post_title">{{post.title}}</p>
+            <p class="post_date">{{post.date}}</p>
+            <p class="post_content">{{post.content}}</p>
+        </div>
+    {% endfor %}
+    </div>
+</div>
