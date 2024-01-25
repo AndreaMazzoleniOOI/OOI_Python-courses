@@ -1,0 +1,15 @@
+<h1>Welcome!</h1>
+
+<h2>Please enter a room and a username</h2>
+
+<div class="login-form">
+    <form method="POST" action="check_room">
+        {% csrf_token %}
+        <p> Room name</p>
+        <input type="text" name="room_name">
+        <p>User </p>
+        <input type="text" name="username">
+        <br><br>
+        <input type="submit">
+    </form>
+</div>

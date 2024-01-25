@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<h1 class="main-title">Weather app</h1>
+
+<div class="output">
+    <form class="city-select" method="POST"  action="">
+        {% csrf_token %}
+        Please select city
+        <input type="text" name="city">
+    </form>
+    {% for message in messages %}
+      <h5 class="message-error">
+          Error! {{message}}
+      </h5>
+    {% endfor %}
+
+    {% if posts %}
+        <p class="output"> City: {{posts.city}} </p>
+        <p class="output"> Country code: {{posts.country_code}} </p>
+        <p class="output"> Coordinates: {{posts.coordinates}} </p>
+        <p class="output"> Temperature: {{posts.temperature}} °C</p>
+        <p class="output"> Pressure: {{posts.pressure}} Pa</p>
+        <p class="output"> Humidity: {{posts.humidity}} %</p>
+    {% endif %}
+</div>
