@@ -13,4 +13,4 @@ Since then I have tried to explore its fundamentals and different aspects. My pa
 - Machine learning: Completed an Udemy course on scikit-learn.
 - CNN: Meet Pablo and Luis, my dog and cat. Built a CNN for classifying their pictures, my initial attempt with TensorFlow. Planning to delve deeper in the future.
 - Threading: Explores fundamentals of threading in Python.
-- Django-crushcode: Includes user login, user registration, weather scanner, and chat apps. More complex projects are on the horizon.
+- Django-crushcode: Includes user login, user registration, weather scanner, and chat (WIP) apps. More complex projects are on the horizon, most likely my personal website and an agenda platform for my father, who works as hairdresser.
