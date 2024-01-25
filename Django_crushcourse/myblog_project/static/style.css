@@ -1,0 +1,37 @@
+.main{
+    background-color: rgb(225, 220, 220);
+    font-family: Arial
+}
+
+.title{
+    font: "Roboto";
+    text-align: center;
+}
+
+.post_ref{
+    color: black;
+    text-decoration: none;
+}
+
+.card{
+
+    background-color: white;
+}
+
+.post_title{
+    font-weight: bold;
+    font-size: 24
+}
+
+.post_date{
+    font-weight: bold;
+    font-size: 20
+}
+
+.post_content{
+    font-size: 18;
+}
+
+.back_link{
+    font_size: 16;
+}
